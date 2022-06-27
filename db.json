@@ -1,0 +1,65 @@
+[
+  {
+    "fname": "govind",
+    "lname": "bisen",
+    "email": "gb@gmail.com",
+    "password": "gb@1234",
+    "mobile": "9999119999",
+    "address": " 181919 jabalpur mp",
+    "id": 1
+  },
+  {
+    "fname": "jenifer",
+    "lname": "richter",
+    "email": "jn@gmail.com",
+    "password": "jn@1234",
+    "mobile": "8888888888",
+    "address": "home santa cruize germany 1819",
+    "id": 2
+  },
+  {
+    "fname": "",
+    "lname": "",
+    "email": "",
+    "password": "",
+    "mobile": "",
+    "address": "",
+    "id": 3
+  },
+  {
+    "fname": "jenifer",
+    "lname": "richter",
+    "email": "jn@gmail.com",
+    "password": "jn@1234",
+    "mobile": "8888888888",
+    "address": "home santa cruize germany 1819",
+    "id": 2
+  },
+  {
+    "fname": "",
+    "lname": "",
+    "email": "",
+    "password": "",
+    "mobile": "",
+    "address": "",
+    "id": 3
+  },
+  {
+    "fname": "jenifer",
+    "lname": "richter",
+    "email": "jn@gmail.com",
+    "password": "jn@1234",
+    "mobile": "8888888888",
+    "address": "home santa cruize germany 1819",
+    "id": 2
+  },
+  {
+    "fname": "",
+    "lname": "",
+    "email": "",
+    "password": "",
+    "mobile": "",
+    "address": "",
+    "id": 3
+  }
+]
