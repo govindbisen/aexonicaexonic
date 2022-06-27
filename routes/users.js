@@ -1,5 +1,6 @@
 import express from 'express';
 const router = express.Router();
+import { client } from '../index.js';
 
 router.get('/about', (req, res) => {
   res.send('testing routes');

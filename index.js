@@ -19,7 +19,7 @@ async function createConnection() {
   return client;
 }
 
-const client = await createConnection();
+export const client = await createConnection();
 
 app.use(express.json());
 
