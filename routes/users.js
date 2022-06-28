@@ -1,4 +1,6 @@
 import express from 'express';
+import { auth } from '../auth.js';
+
 const router = express.Router();
 import { client } from '../index.js';
 
@@ -10,22 +12,23 @@ router.post('/', async (request, response) => {
   const data = request.body;
   console.log(data);
   const result = await client
-    .db('axionics')
+    .db('aexonic')
     .collection('users')
     .insertMany(data);
   response.send(result);
 });
 
-router.get('/', async (request, response) => {
+router.get('/', auth, async (request, response) => {
   // const { lname, fname, email, mobile } = request.query;
   const filter = request.query;
   console.log(filter);
   let filteredUser = await client
-    .db('axionics')
+    .db('aexonic')
     .collection('users')
     .find(filter)
     .toArray();
-  // console.log(filteredUser);
+
+  console.log(filteredUser);
   const page = request.query.page;
   const limit = request.query.limit;
 
@@ -36,6 +39,7 @@ router.get('/', async (request, response) => {
   if (page && limit) {
     if (resultUser) {
       response.send(resultUser);
+      return;
     }
   } else {
     response.send(filteredUser);
@@ -46,7 +50,7 @@ router.get('/:id', async (request, response) => {
   console.log(request.params.id);
   const { id } = request.params;
   const user = await client
-    .db('axionics')
+    .db('aexonic')
     .collection('users')
     .findOne({ id: +id });
   console.log(user);
@@ -59,7 +63,7 @@ router.delete('/:id', async (request, response) => {
   // console.log(request.params.id);
   const { id } = request.params;
   const result = await client
-    .db('axionics')
+    .db('aexonic')
     .collection('users')
     .deleteMany({ id: +id });
   //deleteOne({id:+id}) for one
@@ -75,7 +79,7 @@ router.put('/id', async (request, response) => {
   const { id } = request.params;
   const data = request.body;
   const result = await client
-    .db('axionics')
+    .db('aexonic')
     .collection('users')
     .updateOne({ id: id }, { set: data });
   const user = await client
